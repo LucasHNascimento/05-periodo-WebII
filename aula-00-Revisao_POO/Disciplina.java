@@ -1,20 +1,23 @@
 import java.util.List;
+import java.util.ArrayList;
 
 public class Disciplina{
     private String nomeDisciplina;
+    private int cargaHoraria;
     private List<Aluno> alunos;
     private List<Professor> professores;
 
     public Disciplina(){
-        this("", new ArrayList<Aluno>(), new ArrayList<Professor>());
+        this("", 0, new ArrayList<Aluno>(), new ArrayList<Professor>());
     }
 
-    public Disciplina(String nomeDisciplina){
-        this(nomeDisciplina, new ArrayList<Aluno>(), new ArrayList<Professor>());
+    public Disciplina(String nomeDisciplina, int cargaHoraria){
+        this(nomeDisciplina, cargaHoraria, new ArrayList<Aluno>(), new ArrayList<Professor>());
     }
 
-    public Disciplina(String nomeDisciplina, List<Aluno> alunos, List<Professor> professores){
+    public Disciplina(String nomeDisciplina, int cargaHoraria, List<Aluno> alunos, List<Professor> professores){
         this.nomeDisciplina = nomeDisciplina;
+        this.cargaHoraria = cargaHoraria;
         this.alunos = alunos;
         this.professores = professores;
     }
@@ -25,6 +28,14 @@ public class Disciplina{
 
     public String getNomeDisciplina(){
         return this.nomeDisciplina;
+    }
+
+    public void setCargaHoraria(int cargaHoraria){
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public int getCargaHoraria(){
+        return this.cargaHoraria;
     }
 
     public void setAlunos(List<Aluno> alunos){
@@ -53,6 +64,9 @@ public class Disciplina{
 
     @Override
     public String toString(){
-        return "Disciplina{" + getNomeDisciplina() + ", alunos=" + getAlunos() + ", professores=" + getProfessores() + "}";
+        return "Disciplina{" + getNomeDisciplina() +
+          ", carga horaria=" + getCargaHoraria() + 
+          ",\n*** Alunos*** " + getAlunos() +
+           ",\n*** Professores*** " + getProfessores() + "}";
     }
 }
