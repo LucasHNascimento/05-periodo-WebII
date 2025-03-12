@@ -32,11 +32,10 @@ public class Aluno extends Pessoa {
 		return "Aluno [idPessoa= " + super.getIdPessoa() + ", nome= " + super.getNome() + ", matriculaAluno= "
 		+ getMatriculaAluno() + "]";
 	}
-	/*
+	
 	public void imprimeDados() {
 		System.out.println("Nome: "+ super.getNome());
 		System.out.println("CPF: "+ super.getCpf());
 		System.out.println("Matricula Aluno: "+ getMatriculaAluno());
 	}
-	*/
 }

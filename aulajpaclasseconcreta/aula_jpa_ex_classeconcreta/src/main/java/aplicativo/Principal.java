@@ -18,9 +18,6 @@ public class Principal {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula-jpa"); //Instancia o EntityManagerFactory com as configurações de persistencia
 		EntityManager em = emf.createEntityManager(); //Intancia o EntityManager
 		
-		Pessoa pessoa1 = new Pessoa("Lara", "XXX.XXX.XXX-XX");
-		Pessoa pessoa2 = new Pessoa("Cecilia", "XXX.XXX.XXX-XX");
-		
 		Professor professor1 = new Professor("Rafael", "XXX.XXX.XXX-XX", 0001);
 		Aluno aluno1 = new Aluno("Miguel", "XXX.XXX.XXX-XX", 0001);
 		
@@ -29,17 +26,12 @@ public class Principal {
 		
 		em.getTransaction().begin();// iniciar transação com banco de dados
 		
-		em.persist(pessoa1);
-		em.persist(pessoa2);
-		
 		em.persist(professor1);
 		em.persist(aluno1);
 		
 		em.persist(professor2);
 		em.persist(aluno2);
-		
-		Query consultaPessoa = em.createQuery("select pessoa from Pessoa pessoa"); //consulta em jpql
-		ArrayList<Pessoa> listaPessoa = (ArrayList<Pessoa>) consultaPessoa.getResultList();
+				
 		
 		Query consultaP = em.createQuery("select professor from Professor professor"); //consulta em jpql
 		ArrayList<Professor> listaP = (ArrayList<Professor>) consultaP.getResultList();
@@ -51,10 +43,6 @@ public class Principal {
 		
 		emf.close();
 		em.close();
-		
-		for(Pessoa objPessoa: listaPessoa) {
-			System.out.println(objPessoa);
-		}
 		
 		for(Professor objP: listaP) {
 			System.out.println(objP);

@@ -20,12 +20,10 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) //identifica que apenas as classes concretas serão geradas.
-public class Pessoa implements Serializable {
-
-	//private static final long serialVersionUID = 1L; //Id padrão do Serializable
+public abstract class Pessoa implements Serializable {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idPessoa;
 	private String nome;
 	private String cpf;
@@ -33,7 +31,7 @@ public class Pessoa implements Serializable {
 	public Pessoa() {
 		this("", "");
 	}
-
+	
 	public Pessoa(String nome, String cpf) {
 		setNome(nome);
 		setCpf(cpf);
@@ -68,5 +66,5 @@ public class Pessoa implements Serializable {
 		return "Pessoa [idPessoa=" + idPessoa + ", nome=" + nome + ", CPF=" + cpf + "]";
 	}
 	
-	//public abstract void imprimeDados();
+	public abstract void imprimeDados();
 }
