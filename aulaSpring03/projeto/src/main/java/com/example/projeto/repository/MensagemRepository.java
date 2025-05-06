@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MensagemRepository {
-   public String obterMensagem(){
-    return "Mensagem do repositório";
-   }
+    public String obterMensagem(){
+        return "Mensagem do repositório";
+    }
 }
