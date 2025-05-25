@@ -29,6 +29,6 @@ Content-Type: application/json
   "valor": 1200000.00
 }
 
-### Remover pessoa (DELETE)
+### Remover veiculo (DELETE)
 DELETE {{ base_url }}/api/veiculos/1
 Accept: */*
