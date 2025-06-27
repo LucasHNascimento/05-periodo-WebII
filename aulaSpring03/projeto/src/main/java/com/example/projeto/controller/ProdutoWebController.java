@@ -45,7 +45,7 @@ public class ProdutoWebController {
 
         if (result.hasErrors()) {
             // repopula o objeto no formulário em caso de erro
-            return "produtos/form";
+            return "produto/form";
         }
         produtoService.salvarProduto(produto);
         ra.addFlashAttribute("success", "Produto cadastrado com sucesso!");
